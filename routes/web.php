@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RequestMusicController;
+use App\Models\RequestMusic;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +21,4 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('test');
 });
+Route::post('/request_music', [RequestMusicController::class, 'RequestMusic'])->name('request_music');

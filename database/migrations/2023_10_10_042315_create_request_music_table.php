@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('request_music', function (Blueprint $table) {
             $table->id();
+            $table->string('ip_address')->nullable();
             $table->string('user_name');
             $table->string('music_name');
             $table->string('anime_name')->nullable();
