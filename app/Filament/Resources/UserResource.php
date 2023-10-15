@@ -7,11 +7,14 @@ use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Components\Group;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
+use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -27,7 +30,23 @@ class UserResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([]);
+            ->schema([
+                Section::make()
+                    ->schema([
+                        TextInput::make('name')
+                            ->required(),
+                        TextInput::make('email')
+                            ->required()
+                            ->unique(),
+                        Select::make('role_id')
+                            ->relationship(name: 'roles', titleAttribute: 'name')
+                            ->searchable()
+                            ->optionsLimit(5)
+                            ->preload(),
+                        TextInput::make('password')
+                            ->password(),
+                    ])->columns(2)
+            ]);
     }
 
     public static function table(Table $table): Table
@@ -40,7 +59,8 @@ class UserResource extends Resource
                 TextColumn::make('email')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('role_id')
+                BadgeColumn::make('roles.name')
+                    ->label('Role')->searchable()
             ])
             ->filters([
                 //
