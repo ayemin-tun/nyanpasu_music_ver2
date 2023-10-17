@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="dark:bg-slate-700 dark:text-white">
         @include('layouts.header')
         @yield('content')
         @include('layouts.footer')
