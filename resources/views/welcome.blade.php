@@ -1,7 +1,9 @@
 @extends('layouts.master')
 @section('content')
 <div class="dark:bg-slate-700 dark:text-white">
-    <h1 class="md:container p-4">Main blade</h1>
+    <section x-data="{name: 'Aye Min Tun'}">
+        <h3 x-text="name"></h3>
+    </section>
 </div>
 
 @endsection
