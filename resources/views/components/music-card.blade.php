@@ -1,5 +1,5 @@
 @props(['music'])
-<div class="flex md:flex-row flex-col gap-4 my-2 w-full dark:border-0 border bg-white dark:bg-slate-800 p-5 rounded-lg items-center shadow">
+<div class="flex gap-4 my-2 w-full dark:border-0 border bg-white dark:bg-slate-800 p-5 rounded-lg items-center shadow">
     <div>
         <img src="{{ asset('storage/' . $music['image']) }}" alt="" class="w-20 h-20 rounded-lg shadow-sm">
     </div>

@@ -8,6 +8,7 @@
             <x-music-card :music="$music" />
             @endforeach
         </div>
+        <x-more-music-button />
     </section>
 </div>
 
