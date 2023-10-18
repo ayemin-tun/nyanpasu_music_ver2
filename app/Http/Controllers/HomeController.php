@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         return view('home', [
-            'allMusics' => Music::take(3)->get(),
+            'allMusics' => Music::take(5)->get(),
             'latestMusic' => Music::latest('created_at')->first()
         ]);
     }

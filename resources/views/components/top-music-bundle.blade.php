@@ -2,7 +2,7 @@
 
 <div class="w-full md:h-[30rem] h-auto border-none m-0 p-0">
     <div class="w-full h-full bg-cover bg-center shadow" style="background-image: url('{{ asset('storage/' . $music['image']) }}');">
-        <div class="w-full h-full bg-transparentBlack flex justify-start items-center md:p-20 p-4">
+        <div class="w-full h-full bg-transparentBlack dark:bg-transparentBlack2 flex justify-start items-center md:p-20 p-4">
             <div>
                 <span class="mb-10 text-sm bg-blue-800 text-white md:px-3 md:py-1 px-1 py-1 md:rounded-xl rounded-md">
                     Latest Add

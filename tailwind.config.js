@@ -12,6 +12,7 @@ export default {
     extend: {
       colors: {
         transparentBlack: 'rgba(0, 0, 0, 0.5)',
+        transparentBlack2: 'rgba(0, 0, 0, 0.7)',
       },
 
     },
