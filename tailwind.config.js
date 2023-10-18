@@ -9,7 +9,12 @@ export default {
     container: {
       padding: '4rem',
     },
-    extend: {},
+    extend: {
+      colors: {
+        transparentBlack: 'rgba(0, 0, 0, 0.5)',
+      },
+
+    },
   },
   plugins: [],
   darkMode: 'class'

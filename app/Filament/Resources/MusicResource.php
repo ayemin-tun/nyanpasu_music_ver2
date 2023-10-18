@@ -38,7 +38,9 @@ class MusicResource extends Resource
                         FileUpload::make('image')
                             ->imageEditor()
                             ->required(),
-                        RichEditor::make('description'),
+                        Textarea::make('description')
+                            ->rows(10)
+                            ->cols(10),
                     ]),
                 Group::make()
                     ->schema([
