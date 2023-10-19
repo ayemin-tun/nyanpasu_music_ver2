@@ -14,6 +14,7 @@ class HomeController extends Controller
     {
         return view('home', [
             'allMusics' => Music::take(5)->get(),
+            'allMusicsCarousel' => Music::latest('id')->take(5)->get()->toArray(),
             'latestMusic' => Music::latest('created_at')->first()
         ]);
     }

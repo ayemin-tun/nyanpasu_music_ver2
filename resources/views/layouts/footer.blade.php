@@ -1,4 +1,4 @@
-<div class="  bg-blue-900 dark:bg-slate-800 p-4">
+<div class="  bg-blue-900 dark:bg-slate-800 p-4 z-40">
     <div class="md:container mx-auto flex md:flex-row flex-col gap-3">
         <div class="p-3 w-full md:w-6/12">
             <div class="border-b-2 py-4">
@@ -11,10 +11,10 @@
                 <h3 class="text-white font-bold text-lg my-3">Please Visit</h3>
                 <p class="text-white gap-1 flex">
                     <a href="" class="hover:rotate-[360deg] duration-500">
-                        <img src="storage/images/facebook_icon.png" alt="" srcset="">
+                        <img src="{{ asset('storage/images/facebook_icon.png') }}" alt="" class="w-9 h-9">
                     </a>
                     <a href="" class="hover:rotate-[360deg] duration-500">
-                        <img src="storage/images/youtube_icon.png" alt="" srcset="">
+                        <img src="{{ asset('storage/images/youtube_icon.png') }}" alt="" class="w-9 h-9">
                     </a>
 
                 </p>
