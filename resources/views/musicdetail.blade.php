@@ -1,4 +1,4 @@
 @extends('layouts.master')
 @section('content')
-<x-top-music-bundle :music="$music" />
+<x-music-detail-bundle :music="$music" />
 @endsection
