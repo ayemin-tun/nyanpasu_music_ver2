@@ -69,7 +69,8 @@ class MusicResource extends Resource
                     ->sortable(),
                 TextColumn::make('artist')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->words(5),
                 TextColumn::make('movie_name')
                     ->searchable()
                     ->sortable(),
@@ -94,7 +95,7 @@ class MusicResource extends Resource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make()
-            ]);
+            ])->defaultSort('id', 'desc');
     }
 
     public static function getRelations(): array

@@ -9,4 +9,8 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateMusic extends CreateRecord
 {
     protected static string $resource = MusicResource::class;
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

@@ -3,9 +3,9 @@
 <div class="w-full h-auto border-none m-0 p-0">
     <div class="w-full h-full bg-cover bg-center shadow" style="background-image: url('{{ asset('storage/' . $music['image']) }}');">
         <div class="w-full h-full bg-transparentBlack flex justify-start items-start md:p-20 p-4">
-            <div class="w-full h-auto bg-transparentBlack dark:bg-transparentBlack rounded-2xl p-3 ">
+            <div class="w-full h-auto bg-white dark:bg-transparentBlack rounded-2xl p-3 ">
                 <a href="{{route('all_music')}}">
-                    <span class="pb-2 text-white font-bold">
+                    <span class="pb-2 dark:text-white font-bold">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 19.5L8.25 12l7.5-7.5" />
                         </svg>
@@ -16,17 +16,17 @@
                         <img src="{{ asset('storage/' . $music['image']) }}" alt="" class="w-full md:h-96 h-50 rounded-xl">
                     </div>
                     <div>
-                        <h1 class="text-white md:mt-4 font-extrabold md:text-[35px] text-xl">
+                        <h1 class="dark:text-white md:mt-4 font-extrabold md:text-[35px] text-xl">
                             {{$music['name']}}
                         </h1>
-                        <p class="md:mt-3 text-white md:text-base text-sm">
+                        <p class="md:mt-3 dark:text-white md:text-base text-sm">
                             Artist: {{$music['artist']}} <br>
                             Movie: {{$music['movie_name']?$music['movie_name']:"No Movie"}}
                         </p>
                         <p class="md:mt-3 text-white md:text-base text-sm">
 
                         </p>
-                        <p class="text-white mt-4 border-t-2 border-b-2 pt-4 pb-4">
+                        <p class="dark:text-white mt-4 border-t-2 border-b-2 pt-4 pb-4">
                             <span class="md:text-base text-sm">
                                 {{$music['description']}}
                             </span>
