@@ -17,10 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class)->name('home');
-Route::get('/test', function () {
-    return view('test');
+Route::middleware(['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->prefix(LaravelLocalization::setLocale())->group(function () {
+    Route::get('/', HomeController::class)->name('home');
+    Route::get('/test', function () {
+        return view('test');
+    });
+    Route::get('/music/{id}', [MusicController::class, 'musicDetail']);
+    Route::get('/music', [MusicController::class, 'index'])->name('all_music');
+    Route::post('/request_music', [RequestMusicController::class, 'RequestMusic'])->name('request_music');
 });
-Route::get('/music/{id}', [MusicController::class, 'musicDetail']);
-Route::get('/music', [MusicController::class, 'index'])->name('all_music');
-Route::post('/request_music', [RequestMusicController::class, 'RequestMusic'])->name('request_music');

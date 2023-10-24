@@ -1,0 +1,26 @@
+<?php
+return [
+    'latest_add' => 'Latest Add',
+    'go_watch' => 'Go Watch',
+    'available_music' => 'Available Music',
+    'about_us' => "About Us",
+    'description' => 'The website offers a collection of the most popular and soothing music with MM sub. You can take pleasure in listening to music on this platform and find solace in its melodies, making it a suitable choice for alleviating stress.',
+    'request_music' => 'Request Music',
+    'req_des' => 'If you wish to listen to a specific Anime song with Burmese subtitles (MM Sub), you have the option to request that particular music.',
+    'name' => 'Name',
+    'music_name' => 'Music Name',
+    "anime_name" => 'Anime Name',
+    'your_message' => 'Your Message',
+    'send_req' => "Send Request",
+    'enable_dark' => 'Enable DarkMode',
+    'change_lang' => 'Change Language',
+    'go_to_admin' => 'Go to Admin',
+    'see_more' => 'See More',
+    'please_visit' => 'Please Visit',
+    'download_music' => 'Download Music',
+    '‌all_music' => 'All Musics',
+    'go_home' => 'Go Home',
+    'no_music' => 'No Music',
+    'search_music' => 'Search Music',
+    'settings' => 'Settings'
+];

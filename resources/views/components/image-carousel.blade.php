@@ -7,7 +7,7 @@
                 <div class="w-full h-full bg-transparentBlack flex justify-start items-center md:p-20 p-4">
                     <div>
                         <span class="mb-10 text-sm bg-blue-800 text-white md:px-3 md:py-1 px-1 py-1 md:rounded-xl rounded-md">
-                            Latest Add
+                            @lang('home.latest_add')
                         </span>
                         <h1 class="text-white md:mt-4 font-extrabold md:text-[40px] text-xl" x-text="slide.name">
                         </h1>
@@ -23,7 +23,7 @@
                                         <path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z" />
                                     </g>
                                 </svg>
-                                Go Watch
+                                @lang('home.go_watch')
                             </button>
                         </a>
 

@@ -7,7 +7,7 @@
 <div class="dark:bg-slate-700 dark:text-white md:container w-full">
     <section class="md:p-7 p-2">
         <div class="w-full flex justify-between items-center">
-            <h1 class="dark:text-white font-extrabold text-blue-800 text-lg">Available Music</h1>
+            <h1 class="dark:text-white font-extrabold text-blue-800 text-lg">@lang('home.available_music')</h1>
             <a href="{{route('all_music')}}">
                 <span class="pb-2 text-blue-800 font-bold">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">

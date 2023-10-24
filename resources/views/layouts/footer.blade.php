@@ -2,13 +2,15 @@
     <div class="md:container mx-auto flex md:flex-row flex-col gap-3">
         <div class="p-3 w-full md:w-6/12">
             <div class="border-b-2 py-4">
-                <h3 class="text-white font-bold text-lg mb-3">About Us</h3>
+                <h3 class="text-white font-bold text-lg mb-3">
+                    @lang('home.about_us')
+                </h3>
                 <p class="text-white">
-                    လူကြိုက်များပြီးနားထောင်လို့ကောင်းတဲ့ Anime သီချင်းလေးတွေကို တင်ပေးနေတဲ့ site လေးဖြစ်တဲ့အတွက် ဝင်ပြီးတော့နားထောင်ခံစားကြည့်ပြီး ကြိုက်ကျမယ်လို့မျှော်လင့်ပါတယ်။
+                    @lang('home.description')
                 </p>
             </div>
             <div class="py-4">
-                <h3 class="text-white font-bold text-lg my-3">Please Visit</h3>
+                <h3 class="text-white font-bold text-lg my-3"> @lang('home.please_visit')</h3>
                 <p class="text-white gap-1 flex">
                     <a href="" class="hover:rotate-[360deg] duration-500">
                         <img src="{{ asset('storage/images/facebook_icon.png') }}" alt="" class="w-9 h-9">
@@ -24,9 +26,9 @@
 
         <div class="p-3 w-full md:w-6/12">
             <div class="border-b-2 py-4">
-                <h3 class="text-white font-bold text-lg mb-3">Request Music</h3>
+                <h3 class="text-white font-bold text-lg mb-3"> @lang('home.request_music')</h3>
                 <p class="text-white">
-                    နားထောင်ချင်တဲ့ သီချင်းလေးတွေကိုလည်း website မှာတောင်းဆိုလို့ရပါတယ်နော်။
+                    @lang('home.req_des')
                 </p>
             </div>
 
