@@ -2,6 +2,9 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Widgets\MusicUploadPerDay;
+use App\Filament\Widgets\MusicUploadPerMonth;
+use App\Filament\Widgets\StatsOverview;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -44,8 +47,11 @@ class AdminPanelProvider extends PanelProvider
                     ->url('/')
                     ->sort(1)
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->widgets([])
+            ->widgets([
+                StatsOverview::class,
+                MusicUploadPerDay::class,
+                MusicUploadPerMonth::class,
+            ])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

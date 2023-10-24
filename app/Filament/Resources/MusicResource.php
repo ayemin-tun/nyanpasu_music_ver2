@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\MusicResource\Pages;
 use App\Filament\Resources\MusicResource\RelationManagers;
 use App\Models\Music;
+use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use Filament\Actions\ActionGroup;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -25,13 +26,25 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class MusicResource extends Resource
+class MusicResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Music::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-musical-note';
     protected static ?string $recordTitleAttribute = 'name';
     protected static int $globalSearchResultsLimit = 5;
+    public static function getPermissionPrefixes(): array
+    {
+        return [
+            'view',
+            'view_any',
+            'create',
+            'update',
+            'delete',
+            'delete_any',
+            'interact_with_other_create'
+        ];
+    }
     public static function getGlobalSearchResultDetails(Model $record): array
     {
         return [
@@ -95,7 +108,8 @@ class MusicResource extends Resource
                     ->words(5),
                 TextColumn::make('movie_name')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->words(5),
 
             ])
             ->filters([
@@ -108,7 +122,7 @@ class MusicResource extends Resource
                     Tables\Actions\DeleteAction::make()
                         ->visible(function (Music $record) {
                             // Check if the authenticated user is a super admin or the record user_id matches the authenticated user's ID.
-                            return auth()->user()->hasRole('super_admin') || auth()->id() === $record->user_id;
+                            return auth()->user()->hasRole('super_admin') || auth()->user()->can('interact_with_other_create_music') || auth()->id() === $record->user_id;
                         }),
                     Tables\Actions\ViewAction::make()
                         ->color('success'),

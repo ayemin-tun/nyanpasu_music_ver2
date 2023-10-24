@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\RequestMusicResource\Pages;
 use App\Filament\Resources\RequestMusicResource\RelationManagers;
 use App\Models\RequestMusic;
+use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use Filament\Forms;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\RichEditor;
@@ -18,12 +19,21 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class RequestMusicResource extends Resource
+class RequestMusicResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = RequestMusic::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-paper-airplane';
     protected static ?string $navigationGroup = "Muisc";
+    public static function getPermissionPrefixes(): array
+    {
+        return [
+            'view',
+            'view_any',
+            'delete',
+            'delete_any',
+        ];
+    }
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
