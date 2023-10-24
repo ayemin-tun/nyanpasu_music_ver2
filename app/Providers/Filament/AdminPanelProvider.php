@@ -47,6 +47,7 @@ class AdminPanelProvider extends PanelProvider
                     ->url('/')
                     ->sort(1)
             ])
+            ->favicon("images/logo.png")
             ->widgets([
                 StatsOverview::class,
                 MusicUploadPerDay::class,
@@ -68,6 +69,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
-            ]);
+            ])
+            ->databaseNotifications();
     }
 }

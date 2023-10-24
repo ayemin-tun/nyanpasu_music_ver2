@@ -17,7 +17,7 @@ class EditMusic extends EditRecord
             Actions\DeleteAction::make()
                 ->visible(function (Music $record) {
                     // Check if the authenticated user is a super admin or the record user_id matches the authenticated user's ID.
-                    return auth()->user()->hasRole('super_admin') || auth()->id() === $record->user_id;
+                    return auth()->user()->hasRole('super_admin') || auth()->user()->can('interact_with_other_create_music') || auth()->id() === $record->user_id;
                 }),
         ];
     }

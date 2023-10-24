@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestMusic;
 use App\Models\RequestMusic as ModelsRequestMusic;
+use App\Models\User;
+use Filament\Notifications\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -31,7 +33,10 @@ class RequestMusicController extends Controller
         $req_music->anime_name = $request->anime_name;
         $req_music->comment = $request->comment;
         $req_music->save();
-
+        Notification::make()
+            ->title("A new Request Music has been received.")
+            ->success()
+            ->sendToDatabase(User::first());
         return Redirect::back()->with('success', 'Request has been submitted successfully.');
     }
 }

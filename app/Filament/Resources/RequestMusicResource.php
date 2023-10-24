@@ -25,6 +25,7 @@ class RequestMusicResource extends Resource implements HasShieldPermissions
 
     protected static ?string $navigationIcon = 'heroicon-o-paper-airplane';
     protected static ?string $navigationGroup = "Muisc";
+
     public static function getPermissionPrefixes(): array
     {
         return [

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Filament\Notifications\Notification;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -26,6 +27,10 @@ class Music extends Model
         parent::boot();
         static::deleting(function ($music) {
             Storage::delete('public/' . $music->image);
+            Notification::make()
+                ->title("Music Name: " . $music->name . " is successfully delete and associated image from folder is remove by " . Auth()->user()->name)
+                ->warning()
+                ->sendToDatabase(Auth()->user());
         });
         static::saving(function ($music) {
             if ($music->isDirty('image')) {
