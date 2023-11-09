@@ -26,7 +26,7 @@ class StatsOverview extends BaseWidget
                 ->chart($chartData)
                 ->url("admin/music"),
             Stat::make("Request Musics", RequestMusic::count())
-                ->icon('heroicon-o-folder-open')
+                ->icon('heroicon-o-musical-note')
                 ->description('Request Musics')
                 ->color('primary')
                 ->chart($chartDataReq)
