@@ -5,6 +5,6 @@
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21l-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
         </span>
-        <input type="text" id="website-admin" class="rounded-none rounded-r-lg bg-transparentBlack text-white border focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full p-2.5 text-lg" placeholder="@lang('home.search_music')" wire:model.live.debounce.300ms="search" name="search">
+        <input type="text" id="website-admin" class="rounded-none rounded-r-lg bg-transparentBlack text-white border focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full p-2.5 text-lg" placeholder="@lang('home.search_music')" wire:model.live.debonce="search" name="search">
     </div>
 </div>

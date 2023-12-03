@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\MusicResource\Pages;
 use App\Filament\Resources\MusicResource\RelationManagers;
+use App\Filament\Resources\MusicResource\Widgets\MusicCount;
 use App\Models\Music;
 use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use Filament\Actions\ActionGroup;
@@ -142,6 +143,13 @@ class MusicResource extends Resource implements HasShieldPermissions
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            MusicCount::class
         ];
     }
 
